@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #container {
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script src="path/to/sigma.min.js"></script>
+    <script>
+        var s = new sigma('container');
+
+        // Add the first node:
+        s.graph.addNode({
+            id: 'n1',
+            label: 'Node 1',
+            x: 0,
+            y: 0,
+            size: 1,
+            color: '#f00'
+        });
+
+        // Add the second node:
+        s.graph.addNode({
+            id: 'n2',
+            label: 'Node 2',
+            x: 1,
+            y: 1,
+            size: 1,
+            color: '#00f'
+        });
+
+        // Add an edge between the two nodes:
+        s.graph.addEdge({
+            id: 'e1',
+            source: 'n1',
+            target: 'n2'
+        });
+
+        // Refresh the graph to reflect the changes:
+        s.refresh();
+    </script>
+</body>
+</html>
